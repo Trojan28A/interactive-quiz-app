@@ -6,18 +6,14 @@ import Home from './components/pages/Home';
 import Quiz from './components/pages/Quiz';
 import Result from './components/pages/Result';
 import Leaderboard from './components/pages/Leaderboard';
-import quizData from './data/quizData';
-import leaderboardData from './data/leaderboardData';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [activeTab, setActiveTab] = useState('quizzes'); // 'quizzes' or 'leaderboard'
   const [currentPage, setCurrentPage] = useState('home');
   const [params, setParams] = useState({});
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-    // Toggle dark class on document element
     document.documentElement.classList.toggle('dark');
   };
 
@@ -27,7 +23,6 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  // In the renderPage function
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
